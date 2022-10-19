@@ -5,6 +5,9 @@ size(400, 700);
 appWidth = width;
 appHeight = height;
 
+println("\tWidth="+width, "\tHeight="+height);  
+println("Display Monitor:", "\twidth="+displayWidth, "& height="+displayHeight);
+
   String ls="Landscape or Square", p="portrait", DO="Display Orientation", instruct="turn phon";
   //String orientation = ( appWidth >= appHeight ) ? ls : p;
   //println (DO, orientation);
@@ -13,16 +16,16 @@ appHeight = height;
   } else {
   if ( appWidth > displayWidth ) appWidth = 0;
   if ( appHeight > displayHeight ) appHeight = 0;
-  if ( appWidth != 0 && appHeight != 0 ) print("swag");
+  if ( appWidth != 0 && appHeight != 0 ) {print("swag");
   } else {
-  if ( appWidth == 0 || appHeight == 0 ) println("borken");
+  println("borken");
   }
+}
 }
 //if (orientation==p) println(instruct);
 
-println("\tWidth="+width, "\tHeight="+height);  
-println("Display Monitor:", "\twidth="+displayWidth, "& height="+displayHeight);
-
-void draw() {}
+void draw() {
+  ellipse(200, 350, 150, 150);
+}
 void keyPressed() {}
 void mousePressed() {}
