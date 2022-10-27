@@ -1,24 +1,11 @@
 int appWidth, appHeight;
-
+float centerWidth, centerHeight, xStart, yStart, widthRect, heightRect;
+color black=#000000, white =#FFFFFF, purple =#A725C1, yellow = #C1B225;
+color yellowNightMode = #C1B200, purpleNightMode = #A72500;
+float thick, thin;
 void setup() {
-size(400, 700);  
+size(1000, 500);  
 //fullScreen();
-color black=#000000;
-float x=width*1/4, y=height*1/4, widthRect=width*1/2, heightRect=height*1/2;
-float centerWidth = width*1/2;
-float centerHeight = height*1/2;
-int thin=width*1/50, thick=2*thin;
-
-background(70);
-
-background( color(random(0, 255)) );
-
-strokeWeight(thick);
-rect(x, y, widthRect, heightRect);
-
-strokeWeight(2);
-stroke(black);
-fill(255);
 
 appWidth = width;
 appHeight = height;
@@ -41,10 +28,31 @@ centerHeight = height*1/2;
   println("borken");
   }
 }
-}
-//if (orientation==p) println(instruct);
 
+//population
+centerWidth = appWidth*1/2;
+centerHeight = appHeight*1/2;
+
+xStart= centerWidth - (appWidth*1/4);
+yStart= centerHeight - (appHeight*1/4);
+
+widthRect=appWidth*1/2;
+heightRect=appHeight*1/2;
+
+thick = appWidth * 1/70;
+thin = appWidth * 1/140;
+}
 void draw() {
+  background(255);
+  background( color(random(0, 255), random(255), 0 ) );
+  //
+  background(black);
+  strokeWeight(thick);
+  stroke(yellow);
+  fill(purple);
+  rect(xStart, yStart, widthRect, heightRect);
+  fill(255);
+  //
   ellipse(appWidth*1/2, appHeight*1/2, 150, 150);
   //epilepsy warning
   fill(random (0, 255), random(0, 255), random(0, 255) );
