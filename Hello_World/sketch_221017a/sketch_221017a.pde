@@ -3,6 +3,7 @@ float centerWidth, centerHeight, xStart, yStart, widthRect, heightRect;
 color black=#000000, white =#FFFFFF, purple =#A725C1, yellow = #C1B225;
 color yellowNightMode = #C1B200, purpleNightMode = #A72500;
 float thick, thin;
+boolean grayScale=false, randomColor=false, blackBackground=false. nightMode=false;
 void setup() {
 size(1000, 500);  
 //fullScreen();
@@ -43,13 +44,20 @@ thick = appWidth * 1/70;
 thin = appWidth * 1/140;
 }
 void draw() {
+  if(grayScale == true)
+  if(nightMode == true)
+{
+}
   background(255);
   background( color(random(0, 255), random(255), 0 ) );
   //
   background(black);
   strokeWeight(thick);
-  stroke(yellow);
-  fill(purple);
+  if(nightMode == true) {
+    if (blackBackground==true) background(black);
+   stroke(yellow);
+   fill(purple);
+  }else{
   rect(xStart, yStart, widthRect, heightRect);
   fill(255);
   //
@@ -58,4 +66,7 @@ void draw() {
   fill(random (0, 255), random(0, 255), random(0, 255) );
 }
 void keyPressed() {}
-void mousePressed() {}
+void mousePressed() {
+if (mousePressed == LEFT) nightMode=true;
+if (mousePressed == RIGHT) nightMode=false;
+}
