@@ -44,8 +44,8 @@ thick = appWidth * 1/70;
 thin = appWidth * 1/140;
 }
 void draw() {
-  if(grayScale == true)
-  if(nightMode == true)
+  if(grayScale == true) background(255);
+  if(randomColor == true) background
 {
 }
   background(255);
@@ -55,17 +55,30 @@ void draw() {
   strokeWeight(thick);
   if(nightMode == true) {
     if (blackBackground==true) background(black);
-   stroke(yellow);
-   fill(purple);
-  }else{
+   stroke(yellowNightMode);
+   fill(purpleNightMode);
+  }else
+  {
+    stroke(yellow);
+    fill(purple);
+  }
   rect(xStart, yStart, widthRect, heightRect);
   fill(255);
+  stroke(black);
+  strokeWeight(1);
   //
   ellipse(appWidth*1/2, appHeight*1/2, 150, 150);
   //epilepsy warning
   fill(random (0, 255), random(0, 255), random(0, 255) );
 }
-void keyPressed() {}
+void keyPressed() {
+  grayScale = false;
+  randomColour = false;
+  blackBackground = false;
+  if ( key=='A' || key=='a' ) grayScale = true;
+  if ( key=='S' || key=='s' ) randomColour = true;
+  if ( key=='W' || key=='w' ) blackBackground = true;
+}
 void mousePressed() {
 if (mousePressed == LEFT) nightMode=true;
 if (mousePressed == RIGHT) nightMode=false;
