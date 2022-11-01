@@ -3,7 +3,7 @@ float centerWidth, centerHeight, xStart, yStart, widthRect, heightRect;
 color black=#000000, white =#FFFFFF, purple =#A725C1, yellow = #C1B225;
 color yellowNightMode = #C1B200, purpleNightMode = #A72500;
 float thick, thin;
-boolean grayScale=false, randomColor=false, blackBackground=false. nightMode=false;
+boolean grayScale=false, randomColor=false, blackBackground=false, nightMode=false;
 void setup() {
 size(1000, 500);  
 //fullScreen();
@@ -45,7 +45,7 @@ thin = appWidth * 1/140;
 }
 void draw() {
   if(grayScale == true) background(255);
-  if(randomColor == true) background
+  if(randomColor == true) background( color (random(0,255), random(0,255), (random(0,255)));
 {
 }
   background(255);
@@ -73,10 +73,10 @@ void draw() {
 }
 void keyPressed() {
   grayScale = false;
-  randomColour = false;
+  randomColor = false;
   blackBackground = false;
   if ( key=='A' || key=='a' ) grayScale = true;
-  if ( key=='S' || key=='s' ) randomColour = true;
+  if ( key=='S' || key=='s' ) randomColor = true;
   if ( key=='W' || key=='w' ) blackBackground = true;
 }
 void mousePressed() {
